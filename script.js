@@ -3,25 +3,30 @@ const getJSON = async url => {
     const data = response.json()
     return data
 }
-    console.log("Fetching data...")
 
-let id = 0
-let advice = ''
-
-getJSON("https://api.adviceslip.com/advice").then(data=>{
-        id = data.slip.id
-        advice = data.slip.advice
-        console.log(id)
-        console.log(advice)
+const generateAdvice = () => {getJSON("https://api.adviceslip.com/advice").then(data=>{
+       let id = data.slip.id
+       let advice = data.slip.advice
 
     let adviceGenerator = `
-    <h1>Advice #${id}</h1>
+    <h1>ADVICE #${id}</h1>
     <p>"${advice}"</p>
+    <section class="pattern">
+        <div class="divider"></div>
+    </section>
+  
     `
 
-    document.getElementById("root").innerHTML = adviceGenerator
-    })
+    document.getElementById("advice-card").innerHTML = adviceGenerator
+})
+}
 
+generateAdvice()
 
-console.log(id)
-console.log(advice)
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("generate").addEventListener("click", () => {
+        generateAdvice();
+        console.log("click");
+    });
+});
+
