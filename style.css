@@ -20,24 +20,24 @@ body{
     text-align: center;
     position: absolute;
     width: 40%;
-    height: 40%;
+    height: 20rem;
     top: 25%;
     background-color: var(--dark-grayish-blue);
     border-radius: 20px;
     font-family: "Manrope", sans-serif;
-    padding: 2rem 3rem;
+    padding: 3rem 2rem;
 }
 
 h1{
     color: var(--neon-green);
-    font-size: 14px;
+    font-size: .87rem;
     font-weight: 400;
     letter-spacing: 2px;
 }
 
 p{
     color: var(--light-cyan);
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 800;
     margin: 22px;
 }
@@ -45,8 +45,9 @@ p{
 .pattern{
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center;;
+    position: relative;
+    top: 2rem;
 }
 
 .divider{
@@ -60,10 +61,10 @@ p{
 
 button{
     position: absolute;
-    top: 18rem;
-    left: 47%;
-    height: 3rem;
-    width: 3rem;
+    top: 24rem;
+    left: 45%;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     padding: .6rem;
     border: none;
@@ -71,7 +72,7 @@ button{
 }
 
 button:hover{
-    box-shadow: 1px 5px 5px var(--light-cyan);
+    box-shadow: 0 5px 20px var(--neon-green);
 }
 
 
@@ -80,4 +81,27 @@ position: absolute;
 bottom: 0;
 color: var(--light-cyan);
 }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: var(--neon-green); }
+
+@media only screen and (max-width: 450px) {
+    #root{
+        width: 70%;
+        height: 20rem;
+        top: 5%;
+    }
+    
+    .divider{
+        width: 100%;
+        height: 14px;
+        background-image: url("./images/pattern-divider-mobile.svg");
+    }
+
+    .pattern{
+        top:.4rem
+    }
+    
+    button{
+        top: 24rem;
+        left: 41%;
+    }
+}

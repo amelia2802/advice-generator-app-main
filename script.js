@@ -26,7 +26,6 @@ generateAdvice()
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("generate").addEventListener("click", () => {
         generateAdvice();
-        console.log("click");
     });
 });
 
