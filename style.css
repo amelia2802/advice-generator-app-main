@@ -62,7 +62,8 @@ p{
 button{
     position: absolute;
     top: 24rem;
-    left: 45%;
+    left: 50%;
+    transform: translateX(-50%);
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -102,6 +103,5 @@ color: var(--light-cyan);
     
     button{
         top: 24rem;
-        left: 41%;
     }
 }

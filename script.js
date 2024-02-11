@@ -1,7 +1,13 @@
 const getJSON = async url => {
-    const response = await fetch(url)
-    const data = response.json()
-    return data
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Fetch error: " + error.message);
+    }
 }
 
 const generateAdvice = () => {getJSON("https://api.adviceslip.com/advice").then(data=>{
